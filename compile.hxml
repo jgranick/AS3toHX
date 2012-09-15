@@ -1,0 +1,3 @@
+-cp src
+-main As3ToHaxe
+-neko run.n

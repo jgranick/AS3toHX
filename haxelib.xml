@@ -1,0 +1,5 @@
+<project name="as3tohx" url="http://github.com/jgranick/as3tohx" license="MIT">
+    <user name="elyon"/>
+    <description>AS3ToHX is a simple library to help convert AS3 code to Haxe</description>
+    <version name="1.00">Initial release</version>
+</project>

@@ -1,10 +1,12 @@
-Tarwins AS3 to Haxe conversion script ( Haxe Neko )
-===================================================
+AS3ToHX
+=======
 
-AS3 to Haxe converter    
+This is a simple conversion script, designed to accelerate the process of converting Actionscript 3 code to Haxe.
+
+It is written in Haxe. If you find ways to improve it, please contribute to the project.
 
 
-Recommended advanced converter (AS3HX)
-======================================
+Usage
+=====
 
-https://code.google.com/p/caffeine-hx/source/browse/trunk#trunk%2Fprojects%2Fas3hx
+	haxelib run as3tohx -from path/to/as3 -to /path/to/hx
