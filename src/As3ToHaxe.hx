@@ -205,6 +205,7 @@ class As3ToHaxe
         // casting
         s = quickRegR(s, "\\(([a-zA-Z0-9_]*) is ([a-zA-Z0-9_]*)", "(Std.is($1, $2)");
         s = quickRegR(s, "=([a-zA-Z0-9_]*) as ([a-zA-Z0-9_]*)", "=cast($1, $2)");
+        s = quickRegR(s, "= ([a-zA-Z0-9_]*) as ([a-zA-Z0-9_]*)", "= cast($1, $2)");
         
         s = quickRegR(s, " int\\(([a-zA-Z0-9_]*)", " Std.int($1");
         s = quickRegR(s, " Number\\(([a-zA-Z0-9_]*)", " Std.parseFloat($1");
