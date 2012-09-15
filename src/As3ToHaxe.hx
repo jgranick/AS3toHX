@@ -35,6 +35,7 @@ package;
 import neko.FileSystem;
 import neko.Lib;
 import neko.Sys;
+import haxe.io.Path;
 
 using StringTools;
 using As3ToHaxe;
@@ -61,6 +62,37 @@ class As3ToHaxe
     
     static function main() 
     {
+    
+    	var args:Array <String> = Sys.args ();
+		
+		if (args.length > 0) {
+			
+			// When called from haxelib, the last argument is the calling directory. The path to nme is set as the current working directory 
+			
+			var lastArgument:String = new Path (args[args.length - 1]).toString ();
+			
+			if (((StringTools.endsWith (lastArgument, "/") && lastArgument != "/") || StringTools.endsWith (lastArgument, "\\")) && !StringTools.endsWith (lastArgument, ":\\")) {
+				
+				lastArgument = lastArgument.substr (0, lastArgument.length - 1);
+				
+			}
+			
+			if (FileSystem.exists (lastArgument) && FileSystem.isDirectory (lastArgument)) {
+				
+				//nme = Sys.getCwd ();
+				//var last = nme.substr(-1,1);
+				//if (last=="/" || last=="\\")
+				//nme = nme.substr(0,-1);
+				Sys.setCwd (lastArgument);
+				
+				//defines.set ("NME", nme);
+				args.pop ();
+				
+			}
+			
+		}
+    	
+    
         new As3ToHaxe();
     }
     
